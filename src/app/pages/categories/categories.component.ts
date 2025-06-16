@@ -7,6 +7,7 @@ import { HeroComponent } from '../../components/hero/hero.component';
 
 @Component({
   selector: 'app-categories',
+  standalone: true,
   imports: [NgIf, NgFor, HeroComponent, FooterComponent],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss'
@@ -59,18 +60,87 @@ export class CategoriesComponent {
 
       case 'tcg':
         this.data = {
-          title: 'TCG',
+          title: 'Trading Card Gaming',
           subtitle: 'Juegos de cartas coleccionables',
           items: [
             {
-              name: 'Magic',
+              name: 'Magic: The Gathering - Booster Pack',
               image: '/assets/img/magic.jpg',
-              description: 'Cartas de estrategia y magia'
+              description: 'Paquete de expansión para tu colección de Magic con cartas poderosas y variadas.',
+              price: '$5.990',
+              discount: '¡15% de descuento!'
             },
             {
-              name: 'Yu-Gi-Oh!',
-              image: '/assets/img/yugioh.jpg',
-              description: 'Duelo de monstruos y hechizos'
+              name: 'One Piece TCG - Starter Deck',
+              image: '/assets/img/onepiece.jpg',
+              description: 'Comienza tu aventura con este deck inicial basado en el popular anime One Piece.',
+              price: '$19.990',
+              discount: 'Sin descuento'
+            },
+            {
+              name: 'Mitos y Leyendas - Deck Básico',
+              image: '/assets/img/myl.webp',
+              description: 'Juego de cartas chileno con leyendas y mitos nacionales para partidas emocionantes.',
+              price: '$14.990',
+              discount: 'Sin descuento'
+            }
+          ]
+        };
+        break;
+      case 'juegos-estrategia':
+        this.data = {
+          title: 'Juegos de Estrategia',
+          subtitle: 'Juegos para pensar y actuar con conocimiento de causa',
+          items: [
+            {
+              name: 'Risk: Juego de Conquista Mundial',
+              image: '/assets/img/risk.jpg',
+              description: 'Estrategia y conquista en este clásico juego donde el objetivo es dominar el mundo',
+              price: '$39.990',
+              discount: '¡20% de descuento!'
+            },
+            {
+              name: 'Pandemic',
+              image: '/assets/img/pandemic.jpg',
+              description: 'Cooperativo donde los jugadores luchan juntos para salvar al mundo de enfermedades mortales.',
+              price: '$44.990',
+              discount: '¡35% de descuento!'
+            },
+            {
+              name: 'Catan',
+              image: '/assets/img/catan.jpg',
+              description: 'Construye y negocia en esta aventura estratégica para dominar la isla de Catan.',
+              price: '$34.990',
+              discount: 'Sin descuento'
+            }
+          ]
+        };
+        break;
+      case 'accesorios':
+        this.data = {
+          title: 'Accesorios',
+          subtitle: 'Elementos dignos de un verdadero jugador',
+          items: [
+            {
+              name: 'Porta Mazos Universal',
+              image: '/assets/img/deck.jpg',
+              description: 'Organiza y transporta tus mazos de cartas con este práctico porta mazos.',
+              price: '$9.990',
+              discount: '¡10% de descuento!'
+            },
+            {
+              name: 'Fundas Protectoras para Cartas',
+              image: '/assets/img/fundas.webp',
+              description: 'Protege tus cartas favoritas con estas fundas resistentes con diferentes colores y diseños.',
+              price: '$6.990',
+              discount: 'Sin descuento'
+            },
+            {
+              name: 'Tapete para Juegos de Mesa',
+              image: '/assets/img/tapete.png',
+              description: 'Superficie antideslizante para jugar con comodidad y proteger tu mesa.',
+              price: '$12.990',
+              discount: '¡5% de descuento!'
             }
           ]
         };
