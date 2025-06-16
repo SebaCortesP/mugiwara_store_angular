@@ -1,0 +1,70 @@
+<app-hero></app-hero>
+<!-- Cuerpo -->
+<main class="categories">
+  
+  <form [formGroup]="form" (ngSubmit)="enviar()" class="container mt-5 p-5 shadow rounded-3 bg-light">
+<div class="row">
+  <!-- Mostrar errores -->
+<div *ngIf="mostrarErrores" class="alert alert-danger mt-4">
+  <ul>
+    <li *ngFor="let error of errores">{{ error }}</li>
+  </ul>
+</div>
+</div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre"
+             [ngClass]="{ 'is-invalid': enviado && form.get('nombre')?.invalid }" />
+    </div>
+    <div class="col-md-6">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="apellido" formControlName="apellido"
+             [ngClass]="{ 'is-invalid': enviado && form.get('apellido')?.invalid }" />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" id="fechaNacimiento" formControlName="fechaNacimiento"
+             [ngClass]="{ 'is-invalid': enviado && form.get('fechaNacimiento')?.invalid }" />
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" id="email" formControlName="email"
+             [ngClass]="{ 'is-invalid': enviado && form.get('email')?.invalid }" />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="password" formControlName="password"
+             [ngClass]="{ 'is-invalid': enviado && form.get('password')?.invalid }" />
+    </div>
+    <div class="col-md-6">
+      <label for="confirmarPassword" class="form-label">Confirmar Contraseña</label>
+      <input type="password" class="form-control" id="confirmarPassword" formControlName="confirmarPassword"
+             [ngClass]="{ 'is-invalid': enviado && form.get('confirmarPassword')?.invalid }" />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input type="text" class="form-control" id="direccion" formControlName="direccion" />
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn submit-btn btn-lg me-3">Comenzar Registro</button>
+    <button type="button" class="btn btn-secondary secondary-btn btn-lg" (click)="resetFormulario()">Limpiar</button>
+  </div>
+</form>
+
+
+
+</main>
+
+<app-footer></app-footer>

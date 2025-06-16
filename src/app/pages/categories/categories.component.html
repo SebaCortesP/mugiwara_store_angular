@@ -1,0 +1,15 @@
+<!-- <app-navbar></app-navbar> -->
+<!-- Header con imagen de fondo -->
+<app-hero></app-hero>
+<!-- Cuerpo -->
+<main class="categories" *ngIf="data">
+  <div *ngFor="let item of data.items" class="product-card">
+    <img [src]="item.image" [alt]="item.name" />
+    <h2>{{ item.name }}</h2>
+    <p>{{ item.description }}</p>
+    <p class="price">${{ item.price }}</p>
+    <p class="discount" *ngIf="item.discount">{{ item.discount }}</p>
+  </div>
+</main>
+
+<app-footer></app-footer>
